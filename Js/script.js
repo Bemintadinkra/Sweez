@@ -1,3 +1,20 @@
+// Mobile Menu Toggle
+const hamburger = document.querySelector(".hamburger");
+const mainNav = document.querySelector(".main-nav");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mainNav.classList.toggle("active");
+});
+
+// Close menu when clicking links
+document.querySelectorAll(".main-nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mainNav.classList.remove("active");
+  });
+});
+
 // Scroll-triggered animations
 const observerOptions = {
   threshold: 0.1,
